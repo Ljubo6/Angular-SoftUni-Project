@@ -12,6 +12,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 export class LoginPageComponent implements OnInit, OnDestroy {
   form!: FormGroup
   aSub!: Subscription
+
   constructor(private auth: AuthService,
               private router: Router,
               private route: ActivatedRoute) {
@@ -19,19 +20,20 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl(null,[Validators.required,Validators.email]),
-      password: new FormControl(null,[Validators.required,Validators.minLength(6)])
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
     })
-    this.route.queryParams.subscribe((params:Params) => {
-      if (params['registered']){
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params['registered']) {
         //Now you can sign in with your data
-      }else if(params['accessDenied']){
+      } else if (params['accessDenied']) {
         //Sign in first
       }
     })
   }
+
   ngOnDestroy() {
-    if(this.aSub){
+    if (this.aSub) {
       this.aSub.unsubscribe()
     }
   }
@@ -43,13 +45,21 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       email: this.form.value.email,
       password: this.form.value.password
     }
-    this.aSub = this.auth.login(user).subscribe(
-      () => this.router.navigate(['/overview']),
-      error => {
+    // this.aSub = this.auth.login(user).subscribe(() =>
+    //     this.router.navigate(['/overview']),
+    //   error => {
+    //     console.warn(error)
+    //     this.form.enable()
+    //   }
+    // )
+    this.aSub = this.auth.login(user).subscribe({
+      next: () => this.router.navigate(['/overview']),
+      error: error => {
         console.warn(error)
         this.form.enable()
       }
-    )
+    })
+
     // this.auth.login(this.form.value)
   }
 }

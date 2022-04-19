@@ -1,7 +1,7 @@
 <form
   class="card"
-  [formGroup]= "form"
-  (ngSubmit)= "onSubmit()"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
 >
   <div class="card-content">
     <span class="card-title">Create account</span>
@@ -15,33 +15,51 @@
       <label for="email">Email:</label>
       <span
         class="helper-text red-text"
-        *ngIf= "form.get('email')?.invalid && form.get('email')?.touched"
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
       >
         <span *ngIf="form.get('email')?.hasError('required')">Email can not be empty!</span>
         <span *ngIf="form.get('email')?.hasError('email')">Please enter valid email!</span>
       </span>
     </div>
-    <div class="input-field">
-      <input
-        id="password"
-        type="password"
-        formControlName="password"
-        [ngClass]="{'invalid': form.get('password')?.invalid && form.get('password')?.touched}"
-      >
-      <label for="password">Password:</label>
-      <span
-        class="helper-text red-text"
-        *ngIf= "form.get('password')?.invalid && form.get('password')?.touched"
-      >
-        <span *ngIf="form.get('password')?.errors?.['required']">Password can not be empty!</span>
-        <span *ngIf="form.get('password')?.errors?.['minlength'] &&
-        form.get('password')?.errors?.['minlength']['requiredLength']">
-          Password must be more {{form.get('password')?.errors?.['minlength']['requiredLength']}} symbols!
-          Now {{form.get('password')?.errors?.['minlength']['actualLength']}}
-        </span>
-      </span>
+
+
+    <div formGroupName="passwords">
+      <div class="input-field">
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          [ngClass]="{'invalid': form.get('password')?.invalid && form.get('password')?.touched}"
+        >
+        <label for="password">Password:</label>
+        <ng-container *ngIf="shouldShowErrorControl('password',passwordsGroup)">
+          <p class="helper-text red-text" *ngIf="passwordsGroup.controls['password'].errors?.['required']">Password can
+            not be empty!</p>
+          <p class="helper-text red-text" *ngIf="passwordsGroup.controls['password'].errors?.['minlength'] &&
+                 passwordsGroup.controls['password'].errors?.['minlength']['requiredLength']">
+            Password must be more {{passwordsGroup.controls['password'].errors?.['minlength']['requiredLength']}} symbols!
+            Now {{passwordsGroup.controls['password'].errors?.['minlength']['actualLength']}}
+          </p>
+        </ng-container>
+      </div>
+      <div class="input-field">
+        <input
+          id="rePassword"
+          type="password"
+          formControlName="rePassword"
+          [ngClass]="{'invalid': form.get('rePassword')?.invalid && form.get('rePassword')?.touched}"
+        >
+        <label for="rePassword">Repeat Password:</label>
+        <ng-container *ngIf="shouldShowErrorControl('rePassword',passwordsGroup)">
+          <p class="helper-text red-text" *ngIf="passwordsGroup.controls['rePassword'].errors?.['passwordMissmatch']">
+
+            Repeat Password does not match password!
+          </p>
+        </ng-container>
+      </div>
     </div>
   </div>
+
   <div class="card-action">
     <button
       type="submit"
