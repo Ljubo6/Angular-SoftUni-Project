@@ -31,7 +31,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
       email: new FormControl(null, [Validators.required, Validators.email]),
       passwords: new FormGroup({
         password: this.passwordControl,
-        rePassword: new FormControl(null, [passwordMatch(this.passwordControl)])
+        rePassword: new FormControl(null, [passwordMatch(this.passwordControl),Validators.required])
       })
     })
   }
@@ -46,7 +46,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
   onSubmit() {
     const {email,passwords} = this.form.value
     const body = {
-      email,
+      email:email.toLowerCase(),
       password: passwords.password
     }
     this.form.disable()
@@ -66,6 +66,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
   }
 
   shouldShowErrorControl(controlName: string, sourceGroup = this.form) {
-    return sourceGroup.controls[controlName].touched && sourceGroup.controls[controlName].invalid
+    return sourceGroup.controls[controlName].touched
+      && sourceGroup.controls[controlName].invalid
   }
 }

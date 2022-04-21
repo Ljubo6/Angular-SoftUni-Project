@@ -45,7 +45,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     this.form.disable()
 
     const user = {
-      email: this.form.value.email,
+      email: this.form.value.email.toLowerCase(),
       password: this.form.value.password
     }
 
