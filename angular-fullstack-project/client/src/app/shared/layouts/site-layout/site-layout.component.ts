@@ -30,7 +30,12 @@ export class SiteLayoutComponent implements AfterViewInit {
 
   logout(event: Event) {
     event.preventDefault()
-    this.auth.logout()
-    this.router.navigate(['/login'])
+
+    const decision = window.confirm(`Do you want to logout`)
+    if (decision){
+
+      this.auth.logout()
+      this.router.navigate(['/login'])
+    }
   }
 }
