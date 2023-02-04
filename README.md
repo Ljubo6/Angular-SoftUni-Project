@@ -1,35 +1,22 @@
-Angular-SoftUni-Project
-CRM - Customer Relationship Management(fullstack - frontend and backend)
+Angular-SoftUni-Project CRM - Customer Relationship Management(fullstack - frontend and backend)
 
-https://dry-garden-33668.herokuapp.com/
+https://dry-garden-33668.herokuapp.com/ For demonstration purposes, I provide an example profile: user:ljubo6@abv.bg pw:123456
 
-За целите на демонстрацията предоставям примерен профил: user:ljubo6@abv.bg pw:123456
+A full-fledged fullstack extension of JavaScript (backend and frontend), SRM (Customer Relationship Management) system has been developed in the framework of the preliminary assignment. CRM (short for Customer Relationship Management), is a business strategy, business practices aimed at the effective management of customer relationships. In practice, it has already been understood that CRM refers to CRM software or CRM system - the IT platform through which the business manages its customer relationships. The CRM system, in its essence, is a customer database that stores rich and detailed information about current and potential customers, partners, suppliers.
 
+The CRM system is used to organize and synchronize information about your customers between individual business units, automate and improve customer communication, customer service, sales, and marketing activities. CRM systems are fundamental for analyzing customer information and improving interaction between individual business units in a company.
 
-   Разработено е едно пълноценно fullstack пролжение на JavaScript (backend и frontend),SRM(Customer Relationship Management) 
-система в рамката на предварителното задание.
-   CRM (съкратено от Customer Relationship Management), е бизнес стратегия, бизнес практики,
-насочени към ефективното управление на взаимоотношенията с клиенти.
-   В практиката вече се е наложило разбирането, че под CRM, се визира CRM софтуер или CRM система – IT платформата,
-посредством която бизнесът управлява взаимоотношенията с клиентите си. 
-   CRM системата в своята същност е клиентска база данни, 
-в която се съхранява богата и детайлна информация за настоящи и потенциални клиенти, партньори, доставчици. 
+The framework of the example SRM system uses the following technologies: Angular(13), MongoDB, Express.js, Node.js
 
-   CRM системата се използва за организиране и синхронизиране на информацията за вашите клиенти между отделните бизнес звена,
-автоматизират се и се подобряват дейностите по комуникация с клиенти, клиентско обслужване, продажби, и маркетинг. 
-   CRM системите са основополагащи за анализи на клиентска информация и подобряване взаимодействието между отделните бизнес звена в една фирма.
+Database is implemented on a remote server cloud.mongodb.com - Atlas
 
-В рамката на примернатa SRM система са използвани следните технологии: Angular(13),MongoDB,Express.js,Node.js
+Application elements:
 
-Базада данни е реализирана на отдалечен сървър cloud.mongodb.com - Atlas
-
-Елементи на приложението:
-
-	* Листване(паджинейшън)
-	* Графичен анализ на данните c Chart.js библиотека
-	* Реализация на Material Design с Materialize CSS
-	* Филтрация на данните
-	* Зареждане на картинки
-	* Работа с асинхронни събития
+* Pagination
+* Graphical data analysis c Chart.js library
+* Material Design implementation with Materialize CSS
+* Data filtering
+* Loading pictures
+* Work with asynchronous events
 
 
