@@ -1,6 +1,11 @@
 Angular-SoftUni-Project CRM - Customer Relationship Management(fullstack - frontend and backend)
 
+<<<<<<< HEAD
 https://dry-garden-33668.herokuapp.com/ For demonstration purposes, I provide an example profile: user:ljubo6@abv.bg pw:123456
+=======
+https://dry-garden-33668.herokuapp.com/
+For demonstration purposes, I provide an example profile: user:ljubo6@abv.bg pw:123456
+>>>>>>> 5f3c5ebff5c4589cca704e8b422812f2f2b8bff0
 
 A full-fledged fullstack extension of JavaScript (backend and frontend), SRM (Customer Relationship Management) system has been developed in the framework of the preliminary assignment. CRM (short for Customer Relationship Management), is a business strategy, business practices aimed at the effective management of customer relationships. In practice, it has already been understood that CRM refers to CRM software or CRM system - the IT platform through which the business manages its customer relationships. The CRM system, in its essence, is a customer database that stores rich and detailed information about current and potential customers, partners, suppliers.
 
@@ -12,11 +17,20 @@ Database is implemented on a remote server cloud.mongodb.com - Atlas
 
 Application elements:
 
+<<<<<<< HEAD
 * Pagination
 * Graphical data analysis c Chart.js library
 * Material Design implementation with Materialize CSS
 * Data filtering
 * Loading pictures
 * Work with asynchronous events
+=======
+	* Pagination
+	* Graphical data analysis c Chart.js library
+	* Material Design implementation with Materialize CSS
+	* Data filtering
+	* Loading pictures
+	* Work with asynchronous events
+>>>>>>> 5f3c5ebff5c4589cca704e8b422812f2f2b8bff0
 
 
